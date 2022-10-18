@@ -4,7 +4,7 @@
 class Something:
     name = "jack" #class attribute
 
-    def __init__(self, ball):
+    def __init__(self, ball, dog):
         self.ball = ball
         self.dog = dog #instance attribute
 
@@ -17,6 +17,12 @@ class Something:
         print(cls.name) #can only access the class attributes
 
     @classmethod
-    def factory_method(cls):
+    def factory_method(cls): #you can make factory methods with this
         #you can use it to make classes with
-        return cls("Steve")
+        return cls("tenis", "terri")
+
+
+if __name__ == "__main__":
+    std = Something.factory_method()
+    print(std.ball)
+    print(std.dog)
