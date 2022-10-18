@@ -1,3 +1,6 @@
+"""The Factory method defines a method that is used to create other objects, 
+the Subclasses will override the method to change the class of objects that will be created"""
+
 from abc import ABC, abstractmethod
 
 class Main(ABC):
@@ -20,7 +23,8 @@ class Product(ABC):
         pass
 
 
-# These are the specific Factoties, they return a abstract product in general so they stay indep
+# These are the specific Factories, they return a abstract Product in general so they stay independent
+#DONT FORGET, we overwrote the factory method, but we still have some_operation()
 class SpecificProductCreator1(Main):
     def factory_method(self) -> Product:
         return SpecificProduct1()
@@ -41,4 +45,13 @@ class SpecificProduct2(Product):
         return "This is Specific Product 2"
 
 
+def client_code(creator: Main) -> None:
+    print(f"The Creator currently in use is: {creator.some_operation()}")
 
+
+if __name__ == "__main__":
+    print("For SpecificProductCreator1")
+    client_code(SpecificProductCreator1())
+
+    print("For SpecificProductCreator2")
+    client_code(SpecificProductCreator2())
