@@ -19,7 +19,7 @@ jobs:
       #matrix is used when you want to use multiple os, or versions
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
 
     steps:
     #selects an action, just uses a ready made code in the official public repo in github actions
